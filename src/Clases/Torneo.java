@@ -14,14 +14,14 @@ import java.util.ArrayList;
 public class Torneo {
     public String nombreTorneo;
     public int numeroParticipantes;
-    public ArrayList<Jugador> listaJugadores;
+    public ArrayList<Usuario> listaJugadores;
     public int nivelDificultad;
     public int cantidadPreguntas;
 
-    public Torneo(String nombreTorneo, int numeroParticipantes, int nivelDificultad, int cantidadPreguntas) {
+    public Torneo(String nombreTorneo, int numeroParticipantes,ArrayList<Usuario> listaJugadores, int nivelDificultad, int cantidadPreguntas) {
         this.nombreTorneo = nombreTorneo;
         this.numeroParticipantes = numeroParticipantes;
-        this.listaJugadores = new ArrayList<>(numeroParticipantes);
+        this.listaJugadores = listaJugadores;
         this.nivelDificultad = nivelDificultad;
         this.cantidadPreguntas = cantidadPreguntas;
     }
@@ -42,11 +42,11 @@ public class Torneo {
         this.numeroParticipantes = numeroParticipantes;
     }
     
-    public ArrayList<Jugador> getListaJugadores() {
+    public ArrayList<Usuario> getListaJugadores() {
         return listaJugadores;
     }
 
-    public void setListaJugadores(ArrayList<Jugador> listaJugadores) {
+    public void setListaJugadores(ArrayList<Usuario> listaJugadores) {
         this.listaJugadores = listaJugadores;
     }
 

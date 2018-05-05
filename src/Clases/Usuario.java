@@ -6,6 +6,7 @@
 package Clases;
 
 import java.awt.Image;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -17,10 +18,11 @@ public class Usuario {
     private String email;
     private String contraseña;
     private String pais;
-    private char sexo;
-    public Image fotografia;
+    private String sexo;
+    public ImageIcon fotografia;
+    public int monedas;
 
-    public Usuario(String nombreCompleto, String nickname, String email, String contraseña, String pais, char sexo, Image fotografia) {
+    public Usuario(String nombreCompleto, String nickname, String email, String contraseña, String pais, String sexo, ImageIcon fotografia) {
         this.nombreCompleto = nombreCompleto;
         this.nickname = nickname;
         this.email = email;
@@ -28,6 +30,7 @@ public class Usuario {
         this.pais = pais;
         this.sexo = sexo;
         this.fotografia = fotografia;
+        this.monedas = 0;
     }
 
     public String getNombreCompleto() {
@@ -70,20 +73,28 @@ public class Usuario {
         this.pais = pais;
     }
 
-    public char getSexo() {
+    public String getSexo() {
         return sexo;
     }
 
-    public void setSexo(char sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
 
-    public Image getFotografia() {
+    public ImageIcon getFotografia() {
         return fotografia;
     }
 
-    public void setFotografia(Image fotografia) {
+    public void setFotografia(ImageIcon fotografia) {
         this.fotografia = fotografia;
+    }
+
+    public int getMonedas() {
+        return monedas;
+    }
+
+    public void setMonedas(int monedas) {
+        this.monedas = monedas;
     }
     
     

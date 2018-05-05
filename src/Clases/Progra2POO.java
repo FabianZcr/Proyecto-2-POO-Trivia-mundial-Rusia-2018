@@ -5,6 +5,8 @@
  */
 package Clases;
 
+import Frames.*;
+
 /**
  *
  * @author Fabián
@@ -15,6 +17,8 @@ public class Progra2POO {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        VentanaComienzo nVentanaComienzo = new VentanaComienzo();
+        nVentanaComienzo.setVisible(true);
     }
     
 }

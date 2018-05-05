@@ -13,11 +13,14 @@ import java.util.ArrayList;
  */
 public class Registros {
     public ArrayList<Usuario> listaUsuarios;   // lista para almacenar todos los usuarios de la aplicación;
+    public Torneo torneoActual;                // torneo actual que se estará ejecutando
     public static Registros instance = null;   // única instancia de la clase Registro (singleton)
     public Usuario usuarioActual = null;
+    
 
     protected Registros(){
         this.listaUsuarios = new ArrayList<>();
+        this.torneoActual = null;
     }
 
     public Usuario getUsuarioActual() {
@@ -27,9 +30,15 @@ public class Registros {
     public void setUsuarioActual(Usuario usuarioActual) {
         this.usuarioActual = usuarioActual;
     }
-    
-    
-    
+
+    public Torneo getTorneoActual() {
+        return torneoActual;
+    }
+
+    public void setTorneoActual(Torneo torneoActual) {
+        this.torneoActual = torneoActual;
+    }
+      
     // método para buscar un usuario en la lista de usuarios
     public Usuario buscarUsuario(String nickname){
         for(int i = 0; i < listaUsuarios.size(); i++){

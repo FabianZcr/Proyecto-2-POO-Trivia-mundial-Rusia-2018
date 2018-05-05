@@ -26,23 +26,106 @@ public class VentanaAdministrador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        panelPrincipal = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        labelUsuario = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel10 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        fondoAzul = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
+
+        panelPrincipal.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        panelPrincipal.setLayout(null);
+
+        jLabel6.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Cantidad de preguntas:");
+        panelPrincipal.add(jLabel6);
+        jLabel6.setBounds(50, 290, 290, 30);
+
+        labelUsuario.setFont(new java.awt.Font("Rockwell", 1, 36)); // NOI18N
+        labelUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        labelUsuario.setText("Usuario");
+        panelPrincipal.add(labelUsuario);
+        labelUsuario.setBounds(270, 10, 220, 70);
+
+        jLabel9.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Crear nuevo torneo");
+        panelPrincipal.add(jLabel9);
+        jLabel9.setBounds(110, 70, 250, 40);
+
+        jLabel7.setFont(new java.awt.Font("Rockwell", 1, 36)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Bienvenido");
+        panelPrincipal.add(jLabel7);
+        jLabel7.setBounds(40, 10, 220, 70);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
+        panelPrincipal.add(jComboBox1);
+        jComboBox1.setBounds(360, 240, 120, 30);
+
+        jLabel10.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Nombre del torneo:");
+        panelPrincipal.add(jLabel10);
+        jLabel10.setBounds(100, 140, 240, 30);
+        panelPrincipal.add(jTextField1);
+        jTextField1.setBounds(360, 290, 120, 30);
+
+        jLabel8.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Numero de participantes:");
+        panelPrincipal.add(jLabel8);
+        jLabel8.setBounds(30, 190, 320, 30);
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5" }));
+        panelPrincipal.add(jComboBox2);
+        jComboBox2.setBounds(360, 190, 120, 30);
+
+        jLabel11.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Nivel de dificultad:");
+        panelPrincipal.add(jLabel11);
+        jLabel11.setBounds(100, 240, 260, 30);
+        panelPrincipal.add(jTextField2);
+        jTextField2.setBounds(360, 140, 120, 30);
+
+        fondoAzul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/wallpaper azul.jpg"))); // NOI18N
+        fondoAzul.setText("jLabel4");
+        fondoAzul.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        panelPrincipal.add(fondoAzul);
+        fondoAzul.setBounds(-920, -10, 1430, 630);
+
+        getContentPane().add(panelPrincipal);
+        panelPrincipal.setBounds(0, 0, 510, 620);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel fondoAzul;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel labelUsuario;
+    private javax.swing.JPanel panelPrincipal;
     // End of variables declaration//GEN-END:variables
 }

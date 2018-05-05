@@ -6,14 +6,19 @@
 package Frames;
 import Clases.*;
 import java.awt.Image;
+import java.io.File;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
 /**
  *
  * @author Fabián
  */
 public class VentanaIniciarSesion extends javax.swing.JFrame {
-
+     private File plan;
+     public static ImageIcon foto = null;
     /**
      * Creates new form VentanaIniciarSesion
      */
@@ -53,7 +58,7 @@ public class VentanaIniciarSesion extends javax.swing.JFrame {
         textFieldNuevoNombre = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        imagenIcono = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
@@ -66,6 +71,8 @@ public class VentanaIniciarSesion extends javax.swing.JFrame {
         textFieldNuevoUsuario = new javax.swing.JTextField();
         comboBoxSexo = new javax.swing.JComboBox<>();
         jButton8 = new javax.swing.JButton();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
         fondoAzul2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -84,7 +91,7 @@ public class VentanaIniciarSesion extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Trivia");
         panelPrincipal.add(jLabel6);
-        jLabel6.setBounds(190, 0, 170, 70);
+        jLabel6.setBounds(200, 0, 170, 70);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/visualA.png"))); // NOI18N
         panelPrincipal.add(jLabel5);
@@ -151,18 +158,21 @@ public class VentanaIniciarSesion extends javax.swing.JFrame {
         panelLogIn.add(jButton3);
         jButton3.setBounds(260, 400, 190, 40);
 
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/arrow.png"))); // NOI18N
+        jButton4.setBackground(new java.awt.Color(153, 0, 51));
+        jButton4.setForeground(new java.awt.Color(153, 0, 51));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Back.png"))); // NOI18N
+        jButton4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
             }
         });
         panelLogIn.add(jButton4);
-        jButton4.setBounds(40, 410, 60, 40);
+        jButton4.setBounds(40, 490, 40, 30);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoUsuario.png"))); // NOI18N
         panelLogIn.add(jLabel2);
-        jLabel2.setBounds(210, 30, 220, 150);
+        jLabel2.setBounds(220, 40, 220, 150);
 
         fondoAzul1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/wallpaper azul.jpg"))); // NOI18N
         fondoAzul1.setText("jLabel4");
@@ -181,81 +191,107 @@ public class VentanaIniciarSesion extends javax.swing.JFrame {
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Sexo:");
         panelRegistro.add(jLabel10);
-        jLabel10.setBounds(190, 410, 90, 30);
+        jLabel10.setBounds(190, 430, 90, 30);
         panelRegistro.add(textFieldNuevoNombre);
-        textFieldNuevoNombre.setBounds(280, 210, 190, 30);
+        textFieldNuevoNombre.setBounds(280, 230, 190, 30);
 
         jButton5.setFont(new java.awt.Font("Rockwell", 1, 10)); // NOI18N
-        jButton5.setText("Cargar");
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/upload.png"))); // NOI18N
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         panelRegistro.add(jButton5);
-        jButton5.setBounds(280, 460, 190, 30);
+        jButton5.setBounds(340, 480, 70, 50);
 
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/arrow.png"))); // NOI18N
+        jButton6.setBackground(new java.awt.Color(153, 0, 51));
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Back.png"))); // NOI18N
+        jButton6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
             }
         });
         panelRegistro.add(jButton6);
-        jButton6.setBounds(30, 410, 60, 40);
+        jButton6.setBounds(30, 490, 40, 30);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoUsuario.png"))); // NOI18N
-        panelRegistro.add(jLabel4);
-        jLabel4.setBounds(220, 0, 140, 150);
+        imagenIcono.setForeground(new java.awt.Color(0, 0, 51));
+        imagenIcono.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/iconoUsuario.png"))); // NOI18N
+        imagenIcono.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        panelRegistro.add(imagenIcono);
+        imagenIcono.setBounds(310, 10, 132, 150);
 
         jLabel11.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Nombre :");
         panelRegistro.add(jLabel11);
-        jLabel11.setBounds(150, 210, 130, 30);
+        jLabel11.setBounds(150, 230, 130, 30);
 
         jLabel12.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("E-mail:");
         panelRegistro.add(jLabel12);
-        jLabel12.setBounds(170, 260, 110, 30);
+        jLabel12.setBounds(170, 280, 110, 30);
 
         jLabel13.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Usuario:");
+        jLabel13.setText("seleccionada:");
         panelRegistro.add(jLabel13);
-        jLabel13.setBounds(160, 160, 110, 30);
+        jLabel13.setBounds(90, 80, 280, 30);
 
         jLabel14.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setText("Contraseña:");
         panelRegistro.add(jLabel14);
-        jLabel14.setBounds(110, 310, 170, 29);
+        jLabel14.setBounds(110, 330, 170, 29);
 
         jLabel15.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
         jLabel15.setText("Fotografía:");
         panelRegistro.add(jLabel15);
-        jLabel15.setBounds(130, 460, 150, 30);
+        jLabel15.setBounds(130, 490, 150, 30);
 
         jLabel16.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setText("País:");
         panelRegistro.add(jLabel16);
-        jLabel16.setBounds(200, 360, 80, 30);
+        jLabel16.setBounds(200, 380, 80, 30);
         panelRegistro.add(textFieldNuevoEmail);
-        textFieldNuevoEmail.setBounds(280, 260, 190, 30);
+        textFieldNuevoEmail.setBounds(280, 280, 190, 30);
         panelRegistro.add(textFieldNuevaContraseña);
-        textFieldNuevaContraseña.setBounds(280, 310, 190, 30);
+        textFieldNuevaContraseña.setBounds(280, 330, 190, 30);
         panelRegistro.add(textFieldNuevoPais);
-        textFieldNuevoPais.setBounds(280, 360, 190, 30);
+        textFieldNuevoPais.setBounds(280, 380, 190, 30);
         panelRegistro.add(textFieldNuevoUsuario);
-        textFieldNuevoUsuario.setBounds(280, 160, 190, 30);
+        textFieldNuevoUsuario.setBounds(280, 180, 190, 30);
 
         comboBoxSexo.setFont(new java.awt.Font("Rockwell", 0, 11)); // NOI18N
         comboBoxSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculino", "Femenino" }));
         panelRegistro.add(comboBoxSexo);
-        comboBoxSexo.setBounds(280, 410, 190, 30);
+        comboBoxSexo.setBounds(280, 430, 190, 30);
 
         jButton8.setFont(new java.awt.Font("Rockwell", 1, 10)); // NOI18N
         jButton8.setText("Registrarse");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
         panelRegistro.add(jButton8);
-        jButton8.setBounds(280, 510, 190, 30);
+        jButton8.setBounds(280, 550, 190, 30);
+
+        jLabel17.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("Usuario:");
+        panelRegistro.add(jLabel17);
+        jLabel17.setBounds(160, 180, 110, 30);
+
+        jLabel18.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel18.setText("Imagen");
+        panelRegistro.add(jLabel18);
+        jLabel18.setBounds(130, 40, 150, 50);
 
         fondoAzul2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/wallpaper azul.jpg"))); // NOI18N
         fondoAzul2.setText("jLabel4");
@@ -284,12 +320,6 @@ public class VentanaIniciarSesion extends javax.swing.JFrame {
         panelLogIn.setSize(510, 620);
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        panelPrincipal.setSize(510, 620);
-        panelLogIn.setSize(0,0);
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
         panelPrincipal.setSize(510, 620);
@@ -313,8 +343,8 @@ public class VentanaIniciarSesion extends javax.swing.JFrame {
             if (aux != null) {
                 if (passwordFieldContraseña.getText().equals(aux.getContraseña())) {
                     Registros.getInstance().setUsuarioActual(aux);
-                    VentanaEscogerJugadores vEscoger = new VentanaEscogerJugadores(aux);
-                    vEscoger.setVisible(true);
+                    VentanaCrearTorneo vTorneo = new VentanaCrearTorneo(aux);
+                    vTorneo.setVisible(true);
                     this.dispose();
                 } 
                 else {
@@ -327,46 +357,70 @@ public class VentanaIniciarSesion extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaIniciarSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaIniciarSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaIniciarSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaIniciarSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        panelPrincipal.setSize(510, 620);
+        panelLogIn.setSize(0,0);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VentanaIniciarSesion().setVisible(true);
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+        // TODO add your handling code here:
+        if(textFieldNuevoUsuario.getText().isEmpty() | textFieldNuevoNombre.getText().isEmpty() | textFieldNuevoEmail.getText().isEmpty() | textFieldNuevaContraseña.getText().isEmpty() | textFieldNuevoPais.getText().isEmpty() | foto == null){
+            JOptionPane.showMessageDialog(rootPane, "Campo vacío.");
+        }
+        else{
+            Usuario aux = Registros.getInstance().buscarUsuario(textFieldNuevoUsuario.getText());
+            if (aux!= null){
+                JOptionPane.showMessageDialog(rootPane, "Ese usuario ya existe, intenta con " + textFieldNuevoUsuario.getText() + "123");
             }
-        });
-    }
+            else{
+                String nUsuario = textFieldNuevoUsuario.getText();
+                String nNombre = textFieldNuevoNombre.getText();
+                String nEmail = textFieldNuevoEmail.getText();
+                String nContraseña = textFieldNuevaContraseña.getText();
+                String nPais = textFieldNuevoPais.getText();
+                String nSexo = comboBoxSexo.getSelectedItem().toString();
+                Usuario nuevoUsuario = new Usuario(nNombre, nUsuario, nEmail, nContraseña, nPais, nSexo, foto);
+                Registros.getInstance().listaUsuarios.add(nuevoUsuario);
+                JOptionPane.showMessageDialog(rootPane, "Usuario: " + nUsuario + " registrado con éxito en el juego.");
+            }
+        }
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        int resultado ;
+        VentanaCargarArchivos ventana = new VentanaCargarArchivos();
+        FileNameExtensionFilter filtro1 = new FileNameExtensionFilter("Fotos, JPG y PNG", "jpn","png");
+        ventana.jFileCargarFoto.setFileFilter(filtro1);
+        resultado = ventana.jFileCargarFoto.showOpenDialog(null);
+        if(JFileChooser.APPROVE_OPTION == resultado){
+            //guardar el archivo selecionado
+            plan = ventana.jFileCargarFoto.getSelectedFile();
+            try {
+                ImageIcon icon = new ImageIcon(plan.toString());
+                //ajustar el tamaño de la imagen que se ha cargado
+                Icon fotoSubida = new ImageIcon(icon.getImage().getScaledInstance(imagenIcono.getWidth(), imagenIcono.getHeight(), Image.SCALE_DEFAULT));
+                //borrar TEXTO en label
+                imagenIcono.setText(null);
+                //mostrar imagen en label
+                imagenIcono.setIcon(fotoSubida);
+                foto = (ImageIcon) fotoSubida; 
+            } 
+            catch (Exception ex) {
+                JOptionPane.showMessageDialog(null,"Error al abrir la imagen " + ex);
+            }
+        }
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> comboBoxSexo;
     private javax.swing.JLabel fondoAzul;
     private javax.swing.JLabel fondoAzul1;
     private javax.swing.JLabel fondoAzul2;
+    private javax.swing.JLabel imagenIcono;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -382,9 +436,10 @@ public class VentanaIniciarSesion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
